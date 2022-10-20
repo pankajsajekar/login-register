@@ -1,0 +1,126 @@
+$first-color: #1da1f2;
+$sec-color: #fff;
+$third-color: #ff8800;
+$firth-color: #50c8ff08;
+
+ion-content{
+  --background: $firth-color;
+  background-color: $firth-color;
+}
+
+.container{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5em;
+}
+
+.hint{
+  margin-top: 0.2rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.8rem;
+}
+
+form ion-item{
+  border: 1px solid #ddd;
+}
+
+h3{
+  font-weight: 600;
+}
+
+.default-btn{
+  color: $sec-color;
+  --background: $first-color;
+  background-color : $first-color;
+}
+
+ion-list ion-item{
+  font-size: 0.9rem;
+  padding-right: 1rem;
+}
+
+
+ion-list ion-item ion-label ion-icon{
+  color: red;
+  padding: auto;
+  margin-right: 0.6rem;
+  color: $first-color;
+  margin-right: 0.5rem;
+}
+
+
+.loginWithGoogle{
+  margin: 1rem 0 0 0;
+  --background: #fff !important;
+  color: #000;
+}
+
+.loginWithGoogle ion-img{
+  height:1rem;
+  margin: 0 0.6rem 0 0;
+}
+
+.orSec{
+    width: 70%;
+    margin: auto; 
+    border-top: 1px solid #cecece;
+    position: relative;
+}
+
+.ortext{
+    color: #8993a4;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    padding: 4px;
+    top: -13px;
+    left: 50%;
+    background: #fff;
+    margin: 0 0 0 -16px;
+    position: absolute;
+}
+
+.m-top-2rem{
+  margin-top: 2rem;
+}
+
+.m-2rem{
+  margin: 2rem;
+}
+
+.p-r-2rem{
+  padding-right: 2rem;
+}
+
+.height-35{
+  height: 35em;
+}
+
+.height-40{
+  height: 40em;
+}
+
+.card-border{
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  box-shadow: 0 9px 16px 0 rgb(0 106 194 / 20%); 
+  background-color: #fff;
+}
+
+.computergirl-signup{
+  border-radius:50%;
+  width: 40%; 
+  margin: auto;
+}
+
+.color-3{
+  color:#ff8800;
+  text-decoration: none; 
+}
+
+.error{
+  font-size: 0.8rem;
+  color: #ff0000;
+}

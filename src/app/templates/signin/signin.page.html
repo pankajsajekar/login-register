@@ -1,0 +1,53 @@
+<ion-content >
+  <ion-grid id="container" class="signin">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="6">
+        <div class="card-border">
+          <ion-row class="height-35">
+            <ion-col size="5" class="bg-color-1 bo-ra-1">
+              <div class="m-2rem">
+                <h2>Start Your Journey with us.</h2>
+                <h6>Discover the World's best Community of Job Provider.</h6>
+                <ion-img src="assets/img/login-vector.png" class="ion-margin"></ion-img>
+              </div>
+            </ion-col>
+            <ion-col size="6" class="ion-padding">
+              <form [formGroup]="signinForm" (ngSubmit)="submitForm()" novalidate>
+                <div class="m-2rem">
+                  <h3 class="ion-margin-start ion-text-start">Sign In</h3>
+                  <ion-item class="m-top-2rem">
+                    <ion-label position="floating">Email Id</ion-label>
+                    <ion-input type="Email" formControlName="email"  placeholder="Enter Email" required></ion-input>
+                  </ion-item>
+                  <p class="ion-text-start"><span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+                    Email is required.
+                  </span>
+                  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+                    Please provide valid email id.
+                  </span></p>
+                  <ion-item class="ion-margin-top">
+                    <ion-label position="floating">Password</ion-label>
+                    <ion-input type="Password"  formControlName="password"  placeholder="Enter Password" required></ion-input>
+                  </ion-item>
+                  <p class="ion-text-start"><span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+                    Password is required.
+                  </span></p>
+                  <p class="ion-text-end">Forgot Password?</p>
+                    <ion-button type="submit" class="ion-margin-top ion-margin-horizontal ion-text-capitalize" expand="full" id="default-btn" >Login</ion-button>
+                </div>
+              </form>
+              <div class="orSec"><span class="ortext">Or</span></div>
+              <div class="ion-margin-top">
+                <ion-button class="ion-text-capitalize loginWithGoogle" shape="round">
+                  <ion-img src="assets/img/google-G.png"></ion-img> Sign in with Google </ion-button>
+              </div>
+              <p style="margin-top: 1.8rem;" ><a [routerLink]="['/signup']">Register For Free</a>
+                </p>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

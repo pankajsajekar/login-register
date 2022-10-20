@@ -1,0 +1,87 @@
+<ion-content> 
+  <ion-grid class="container">
+    <ion-row class="">
+      <ion-col size="2">
+      </ion-col>
+      <ion-col size="8">
+        <div class="ion-justify-content-center">
+          <ion-row>
+            <ion-col size="5" class="p-r-2rem">
+              <ion-img src="assets/img/computergirl-signup.png" class="card-border computergirl-signup" shape="round"></ion-img>
+              <div class="card-border ion-padding" >
+                <h6 class="ion-text-center"><strong>On registering, you can</strong></h6>
+                <ion-list>
+                  <ion-item>
+                    <ion-label><ion-icon name="cube"></ion-icon>Build your profile and let recruiters find you</ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label><ion-icon name="cube"></ion-icon>Get job postings delivered right to your email
+                  </ion-label>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label><ion-icon name="cube"></ion-icon>Find a job and grow your career
+                </ion-label>
+                  </ion-item>
+                </ion-list>
+                <p class="ion-text-center">Have a Account <a [routerLink]="['/signin']" class="color-3" >Login</a> here.</p>
+              </div>
+            </ion-col>
+            <ion-col size="7" class="card-border">
+              <h3 style="margin: 1rem 2rem 1.4rem 1rem;">Let's Now Take Off!</h3>
+              <form [formGroup]="signupForm" (ngSubmit)="submitForm()" novalidate class="m-2rem">
+                <ion-item class="ion-margin-top">
+                  <ion-label position="floating">Name</ion-label>
+                  <ion-input type="Text" formControlName="name" placeholder="Enter Name"  required></ion-input>
+                </ion-item>
+                <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
+                  Name is required.
+                </span>
+                <ion-item class="ion-margin-top">
+                  <ion-label position="floating">Email Id</ion-label>
+                  <ion-input type="Email" formControlName="email" placeholder="Enter Email" required></ion-input>
+                </ion-item>
+                <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+                  Email is required.
+                </span>
+                <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+                  Please provide valid email id.
+                </span>
+                  <p class="hint">You will get relevant job in your email</p>
+                <ion-item class="ion-margin-top">
+                  <ion-label position="floating">Password</ion-label>
+                  <ion-input type="Password" formControlName="password"  placeholder="Enter Password" required></ion-input>
+                </ion-item>
+                <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+                  Password is required.
+                </span>
+                  <p class="hint">Minimum 6 character required</p>
+                  
+                <ion-item class="ion-margin-top">
+                  <ion-label position="floating">Mobile Number</ion-label>
+                  <ion-input type="Text" formControlName="mobile" placeholder="Enter Mobile Number" required></ion-input>
+                </ion-item>
+                <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.required">
+                  Mobile Number is required.
+                </span>
+                <span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.pattern">
+                  Mobile Number Should be 10 digit.
+                </span>
+                <p class="hint">You will receive call on this number</p>
+                 
+                <ion-button type="submit" expand="full" class="ion-margin-horizontal default-btn ion-text-capitalize" >Signup Now</ion-button>
+              </form>
+                <div class="m-top-2rem ion-text-center">
+                <div class="orSec"><span class="ortext">Or</span></div>
+                  <div class="ion-margin-vertical" >
+                    <ion-button class="ion-text-capitalize loginWithGoogle" shape="round"><ion-img src="assets/img/google-G.png"></ion-img> Sign up With Google </ion-button>
+                  </div>
+                </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+      <ion-col size="2">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
