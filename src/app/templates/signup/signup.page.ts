@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms";
+import { ConfigServiceService } from '../../services/config-service.service';
 
 @Component({
   selector: 'app-signup',
@@ -10,17 +11,25 @@ export class SignupPage implements OnInit {
 
   signupForm: FormGroup;
   isSubmitted = false;
+  JsonData : "";
   
-  constructor(public formBuilder: FormBuilder) { }
-
+  constructor(public formBuilder: FormBuilder, private ConfigServiceService: ConfigServiceService) { }
 
   submitForm() {
     this.isSubmitted = true;
-    if (!this.signupForm.valid) {
+    if (!this.signupForm.valid){
       console.log('Please provide all the required values!')
       return false;
-    } else {
+    } 
+    else {
       console.log(this.signupForm.value)
+      this.JsonData = this.signupForm.value
+      this.ConfigServiceService.RegisterJsonData(this.JsonData).subscribe(
+        (response: any) => { alert(JSON.stringify(response));
+        },
+        (error)=>{
+          alert(JSON.stringify(error));
+      });
     }
   }
 
@@ -40,7 +49,6 @@ export class SignupPage implements OnInit {
       mobile:['',[Validators.required,
               Validators.minLength(10),
             Validators.maxLength(11), Validators.pattern('^[0-9]+$')]],
-
     });
 
   }

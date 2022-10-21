@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ConfigServiceService } from '../services/config-service.service'
+
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,19 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  users : any;
+
+  constructor(private ConfigServiceService: ConfigServiceService) {}
+
+  ngOnInit(){
+  }
+
+  postreq(){
+    console.log("postreq"); 
+    this.ConfigServiceService.getUsers().subscribe((response)=> { 
+      console.log(response); 
+      this.users = response;
+    });
+  }
 
 }
