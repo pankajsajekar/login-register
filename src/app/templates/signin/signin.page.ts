@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConfigServiceService } from '../../services/config-service.service';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-signin',
@@ -14,20 +16,23 @@ export class SigninPage implements OnInit {
   serviceData: string = "";
   JsonData : "";
 
-  constructor(public formBuilder: FormBuilder, private ConfigServiceService: ConfigServiceService) { }
+  constructor(public formBuilder: FormBuilder, private ConfigServiceService: ConfigServiceService, private route: Router, private tokenService: TokenService) { }
 
   submitForm() {
     this.isSubmitted = true;
     if (!this.signinForm.valid) {
       console.log('Please provide all the required values!')
       return false;
-    } 
+    }
     else {
       console.log(this.signinForm.value)
       this.JsonData = this.signinForm.value
       this.ConfigServiceService.LoginJsonData(this.JsonData).subscribe(
         (response: any) => {
-        alert(JSON.stringify(response));
+        // alert(JSON.stringify(response));
+        // localStorage.setItem('token', JSON.stringify(response.token.access));
+        this.tokenService.saveToken(response.token.access);
+        this.route.navigate(['profile'])
         },
         (error)=>{
           alert(JSON.stringify(error));
@@ -47,6 +52,10 @@ export class SigninPage implements OnInit {
       password: ['',[Validators.required]]
 
     })
+  }
+
+  goforgotpassword(){
+    this.route.navigate(['/resendpasswordemail']);
   }
 
 

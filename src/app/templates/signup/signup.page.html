@@ -20,7 +20,7 @@
                   </ion-item>
                   <ion-item>
                     <ion-label><ion-icon name="cube"></ion-icon>Find a job and grow your career
-                </ion-label>
+                    </ion-label>
                   </ion-item>
                 </ion-list>
                 <p class="ion-text-center">Have a Account <a [routerLink]="['/signin']" class="color-3" >Login</a> here.</p>
@@ -55,6 +55,15 @@
                   Password is required.
                 </span>
                   <p class="hint">Minimum 6 character required</p>
+
+                <ion-item class="ion-margin-top">
+                  <ion-label position="floating">Confirm Password</ion-label>
+                  <ion-input type="Password" formControlName="password2"  placeholder="Enter Confirm Password" required></ion-input>
+                </ion-item>
+                <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+                  Password is required.
+                </span>
+                  <p class="hint">Comfirm Password should match with Password</p>
                   
                 <ion-item class="ion-margin-top">
                   <ion-label position="floating">Mobile Number</ion-label>

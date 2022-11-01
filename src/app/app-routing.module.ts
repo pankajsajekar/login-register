@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -19,12 +20,25 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./templates/signup/signup.module').then( m => m.SignupPageModule)
   },
+  {
+    path: 'changepassword',
+    loadChildren: () => import('./templates/changepassword/changepassword.module').then( m => m.ChangepasswordPageModule)
+  },
+  {
+    path: 'resendpasswordemail',
+    loadChildren: () => import('./templates/resendpasswordemail/resendpasswordemail.module').then( m => m.ResendpasswordemailPageModule)
+  },
+  {
+    path: 'profile', canActivate:[AuthGuard],
+    loadChildren: () => import('./templates/profile/profile.module').then( m => m.ProfilePageModule)
+  },
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule { }

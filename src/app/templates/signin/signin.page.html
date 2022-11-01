@@ -32,7 +32,7 @@
                   <p class="ion-text-start"><span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
                     Password is required.
                   </span></p>
-                  <p class="ion-text-end">Forgot Password?</p>
+                  <p class="ion-text-end forgotpassword" (click)="goforgotpassword()">Forgot Password?</p>
                     <ion-button type="submit" class="ion-margin-top ion-margin-horizontal ion-text-capitalize" expand="full" id="default-btn" >Login</ion-button>
                 </div>
               </form>

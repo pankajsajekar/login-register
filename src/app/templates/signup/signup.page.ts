@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms";
 import { ConfigServiceService } from '../../services/config-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -13,7 +14,9 @@ export class SignupPage implements OnInit {
   isSubmitted = false;
   JsonData : "";
   
-  constructor(public formBuilder: FormBuilder, private ConfigServiceService: ConfigServiceService) { }
+  constructor(public formBuilder: FormBuilder,
+   private ConfigServiceService: ConfigServiceService,
+   private route: Router) { }
 
   submitForm() {
     this.isSubmitted = true;
@@ -25,7 +28,9 @@ export class SignupPage implements OnInit {
       console.log(this.signupForm.value)
       this.JsonData = this.signupForm.value
       this.ConfigServiceService.RegisterJsonData(this.JsonData).subscribe(
-        (response: any) => { alert(JSON.stringify(response));
+        (response: any) => {
+          this.route.navigate(['/signin']);
+          // alert(JSON.stringify(response));
         },
         (error)=>{
           alert(JSON.stringify(error));
@@ -46,11 +51,17 @@ export class SignupPage implements OnInit {
       email:['',[Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       password:['',[Validators.required,
         Validators.minLength(6)]],
+      password2:['',[Validators.required,
+        Validators.minLength(6)]],
       mobile:['',[Validators.required,
               Validators.minLength(10),
             Validators.maxLength(11), Validators.pattern('^[0-9]+$')]],
     });
 
+  }
+
+  signin(){
+    this.route.navigate(['signin'])
   }
 
 
