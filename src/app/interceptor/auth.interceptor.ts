@@ -3,32 +3,38 @@ import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpHeaders, Http
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { TokenService } from '../services/token.service';
-
+import { ConfigServiceService } from '../services/config-service.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-    constructor(private tokenService:TokenService) { }
+    constructor(private tokenService:TokenService, private ConfigServiceService: ConfigServiceService) { }
 
     handleError(error: HttpErrorResponse){
         return throwError(error);
     }
 
     intercept(request: HttpRequest<any>, next: HttpHandler) {
+        console.log("interceptor call");
 
-        console.log("interceptor call")
-        
-        // return next.handle(request);
-        // let token = ' '
+        var authorisedToken = this.ConfigServiceService.getAuthStatus();
+        if (authorisedToken){
+            const headers = new HttpHeaders({
+                'Content-type': 'application/json; charset=UTF-8',
+                'Authorization': `Bearer ${authorisedToken}`
+              })
+            const clone = request.clone({
+                headers: headers
+            })
+            return next.handle(clone).pipe(
+                retry(1),
+                catchError(this.handleError)
+            );
+        }
 
-        // const token = JSON.parse(localStorage.getItem('token'))
-        const token = JSON.parse(this.tokenService.getToken());
-        console.log(token)
         const headers = new HttpHeaders({
-            'Content-type': 'application/json; charset=UTF-8',
-            'Authorization': `Bearer ${token}`
+            'Content-type': 'application/json; charset=UTF-8'
           })
 
-        
         const clone = request.clone({
             headers: headers
         })

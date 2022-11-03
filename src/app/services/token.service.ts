@@ -23,7 +23,13 @@ export class TokenService {
 
   public getToken(): string {
     console.log("token service")
-    return localStorage.getItem(TOKEN_KEY);
+    // return localStorage.getItem(TOKEN_KEY);
+    let token = localStorage.getItem(TOKEN_KEY);
+    if (token) {
+      return token;
+    } else {
+      return null;
+    }
   }
 
   public saveUser(user) {

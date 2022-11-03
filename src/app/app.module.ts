@@ -9,9 +9,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
+import { HeaderComponent } from './templates/header/header.component';
+import { FooterComponent } from './templates/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(),

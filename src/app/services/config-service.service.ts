@@ -13,10 +13,10 @@ export class ConfigServiceService {
   userurl = "http://127.0.0.1:8000/api/user/";
 
   public LoginJsonData(JsonData: string): Observable<any> {
-    const URL1 = this.userurl + "login/"
+    const URL = this.userurl + "login/"
     const data_body = JsonData
     const header = { 'Content-type': 'application/json; charset=UTF-8' }
-    return this.http.post(URL1, data_body);
+    return this.http.post(URL, data_body);
   }
 
   public RegisterJsonData(JsonData:string): Observable<any>{

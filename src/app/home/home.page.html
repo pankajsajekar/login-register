@@ -1,25 +1,9 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
     <h1>Hello Guys !!!</h1>
     <ion-button href="signin/">SignIn</ion-button>
-
     <ion-button [routerLink]="['/signup']">Register</ion-button>
     <ion-button [routerLink]="['/changepassword']">Change Password</ion-button>
-
     <ion-button (click)="postreq()">post data</ion-button>
     <ion-button [routerLink]="['/resendpasswordemail']">resend </ion-button>
     <ion-button [routerLink]="['/profile']">profile </ion-button>
