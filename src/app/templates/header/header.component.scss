@@ -1,0 +1,34 @@
+$first-color: #1da1f2;
+$sec-color: #fff;
+$third-color: #ff8800;
+$firth-color: #50c8ff08;
+
+.spacer{
+    flex: 1 1 auto;
+}
+a{  
+    padding: 5px;
+    margin: 0 10px; 
+    text-decoration: none;
+}
+a:hover{
+    background-color: aliceblue;
+}
+.nav-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-btn{
+    cursor: pointer;
+}
+
+.default-btn{
+    color: $sec-color;
+    --background: $first-color;
+    background-color : $first-color;
+    text-transform: capitalize;
+    // padding: 3px 9px;
+    font-size: 13px;
+  }

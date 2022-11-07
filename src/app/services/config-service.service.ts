@@ -15,15 +15,13 @@ export class ConfigServiceService {
   public LoginJsonData(JsonData: string): Observable<any> {
     const URL = this.userurl + "login/"
     const data_body = JsonData
-    const header = { 'Content-type': 'application/json; charset=UTF-8' }
     return this.http.post(URL, data_body);
   }
 
   public RegisterJsonData(JsonData:string): Observable<any>{
     const URL = this.userurl + "register/"
     const data_body = JsonData
-    const header = { 'Content-type': 'application/json; charset=UTF-8'}
-    return this.http.post(URL, data_body, {headers:header});
+    return this.http.post(URL, data_body);
   }
 
   public ChangePasswordJsonData(JsonData:string): Observable<any>{
@@ -38,7 +36,6 @@ export class ConfigServiceService {
     console.log("config service")
     const URL = this.userurl + "send-reset-password-email/"
     const data_body = JsonData
-    const header = { 'Content-type': 'application/json; charset=UTF-8'}
     return this.http.post(URL, data_body);
    }
 

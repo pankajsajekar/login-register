@@ -1,12 +1,12 @@
 <ion-content [fullscreen]="true">
   <div id="container">
     <h1>Hello Guys !!!</h1>
-    <ion-button href="signin/">SignIn</ion-button>
+    <ion-button [routerLink]="['/signin']" >SignIn</ion-button>
     <ion-button [routerLink]="['/signup']">Register</ion-button>
     <ion-button [routerLink]="['/changepassword']">Change Password</ion-button>
     <ion-button (click)="postreq()">post data</ion-button>
     <ion-button [routerLink]="['/resendpasswordemail']">resend </ion-button>
     <ion-button [routerLink]="['/profile']">profile </ion-button>
-    <ion-button (click)="logout()">logout </ion-button>
+    <ion-button (click)="logout()">logout </ion-button> 
   </div>
 </ion-content>

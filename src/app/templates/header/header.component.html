@@ -1,15 +1,16 @@
 <ion-header>
-
-  <div class="ion-padding">
-    Job Portal
-    <span>
-    <ion-button href="signin/">SignIn</ion-button>
-    <ion-button [routerLink]="['/signup']">Register</ion-button>
-    <ion-button [routerLink]="['/changepassword']">Change Password</ion-button>
-    <ion-button (click)="postreq()">post data</ion-button>
-    <ion-button [routerLink]="['/resendpasswordemail']">resend </ion-button>
-    <ion-button [routerLink]="['/profile']">profile </ion-button>
-    <ion-button (click)="logout()">logout </ion-button>
-    </span>
-    </div>
+  <div class="ion-padding" style="display: flex;">
+    <span class="">Job Portal logo</span>
+    <div class="spacer"></div>
+    <a [routerLink]="['/']">home</a>
+    <a [routerLink]="['/changepassword']">Change Password</a>
+    <a [routerLink]="['/profile']">profile </a>
+    <a (click)="logout()" class="logout-btn">logout</a>
+  <div class="spacer"></div>
+  <!-- <ion-button [routerLink]="['/signin']" class="default-btn">SignIn</ion-button>
+  <ion-button [routerLink]="['/signup']" class="default-btn">Register</ion-button> -->
+  <a [routerLink]="['/signin']" >SignIn</a>
+  <a [routerLink]="['/signup']">Register</a>
+  </div>
 </ion-header>
+

@@ -8,7 +8,6 @@ const USER_KEY = 'auth-user';
 })
 export class TokenService {
 
-
   constructor() { }
 
   signOut() {
@@ -17,7 +16,7 @@ export class TokenService {
 
   public saveToken(token: string) {
     console.log("token service")
-    // localStorage.removeItem(TOKEN_KEY);
+    localStorage.removeItem(TOKEN_KEY);
     localStorage.setItem(TOKEN_KEY, JSON.stringify(token));
   }
 

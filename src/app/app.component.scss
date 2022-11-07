@@ -1,0 +1,35 @@
+$first-color: #1da1f2;
+$sec-color: #fff;
+$third-color: #ff8800;
+$firth-color: #50c8ff08;
+
+ion-header{
+    background-color: #fff;
+}
+
+ion-router-outlet{
+    margin-top: 64px;
+    // min-height: 100vh;
+    // position: relative;
+}
+
+app-footer{
+    color: $first-color;
+    background-color: #fff;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+ion-footer{
+    display: block;
+    background-color: #fff;
+}
+
+.default-btn{
+    color: $sec-color;
+    --background: $first-color;
+    background-color : $first-color;
+  }
