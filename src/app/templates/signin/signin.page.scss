@@ -49,6 +49,12 @@ h3{
   font-weight: 600;
 }
 
+ion-item ion-label{
+  font-size: 14px;
+  padding-top: 2px;
+  opacity: 0.7;
+}
+
 .default-btn{
   color: $sec-color;
   --background: $first-color;
@@ -150,4 +156,6 @@ h3{
 
 .forgotpassword{
   cursor: pointer;
+  opacity: 0.6;
+  font-size: 13px;  
 }

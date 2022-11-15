@@ -1,0 +1,50 @@
+<ion-content>
+    <ion-grid style="padding: 0;">
+      <ion-row>
+        <ion-col size='12' style="height: 40em; padding: 0;">
+          <ion-row>
+            <ion-col size="6">
+              <div style="height:35em; position: absolute;right: 3rem; padding-top: 2rem;">
+                <p class="ion-text-center" style="color: #1da1f2;">HIRING SUITE FOR EMPLOYERS</p>
+                <h3 class="ion-text-center">From Campus to Senior Level Hiring</h3>
+                <h6 class="ion-text-center">Bouquet of solutions to meet all your hiring needs</h6>
+                <hr>
+                <img src="assets/img/productive-team-login.png" style="width: 25em;" >
+              </div>
+            </ion-col>
+            <ion-col size="6" class="login-col">
+              <div class="">
+                <h2>Login To Employer Account</h2>
+                <p class="ion-margin-top">Enter your details to login.</p>
+                 <form  [formGroup]="loginForm" (ngSubmit)="submitForm()" class="form">
+                  <ion-item class="m-top-2rem">
+                    <ion-label position="floating">Email Id</ion-label>
+                    <ion-input type="Email" formControlName="email" placeholder="Register Email-ID" required></ion-input>
+                  </ion-item>
+                  <p class="ion-text-start"><span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+                    Email is required.
+                  </span>
+                  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+                    Please provide valid email id.
+                  </span></p>
+                  <ion-item>
+                    <ion-label position="floating">Password</ion-label>
+                    <ion-input type="Password" formControlName="password" placeholder="Enter Password" required></ion-input>
+                  </ion-item>
+                  <p class="ion-text-start"><span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+                    Password is required.
+                  </span></p>
+                  <p class="ion-text-end ion-margin-bottom"><span (click)="goforgotpassword()" class="forgotpassword">Forgot Password?</span></p>
+                    <ion-button type="submit" class="ion-text-capitalize" expand="" id="default-btn" >Login</ion-button>
+                  </form>
+                  <p class="ion-margin-top">By clicking login, you agree to our <a href="" >Terms & Conditions!</a></p>
+                  <p class="ion-margin-top">Don't have an account? <a [routerLink]="['/signin/empoyer-register/']">Register here</a></p>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+        <!-- <ion-col size='2'>
+        </ion-col> -->
+      </ion-row>
+    </ion-grid>
+</ion-content>

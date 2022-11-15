@@ -1,0 +1,67 @@
+<ion-content style="display: block;">
+  <div  >
+    <ion-grid>
+      <ion-row class="rigister-row">
+        <ion-col size="2">
+        </ion-col>
+        <ion-col size="5" class="left-col">
+          <div style="margin-left: 0.2rem;">
+            <p class="welcome">Welcome</p>
+            <h3>Get started with Naukri<br> Recruitment Solutions</h3>
+          </div>
+            <div>
+              <img src="assets/img/successful-team.jpg" width="95%">
+            </div>
+        </ion-col>
+        <ion-col size="5" class="right-col">
+          <div class="" style="padding-right: 3rem; width: 25em;">
+            <h2>Create Account</h2>
+            <p>or already registered ? <a [routerLink]="['/signin/empoyer-login']">Login Now</a></p>
+            <form [formGroup]="registerForm" (ngSubmit)="submitForm()" required>
+              <ion-item>
+                <ion-label position="floating">Company Name
+                </ion-label>
+                <ion-input type="Text"  formControlName="name" placeholder="Enter Company Name" required>   
+                </ion-input>
+              </ion-item>
+              <p class="ion-text-start"><span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">Company name is required.</span></p>
+              <ion-item>
+                  <ion-label position="floating">Official Email</ion-label>
+                    <ion-input type="Email" formControlName="email" placeholder="Register Email-ID" required></ion-input>
+                  </ion-item>
+                  <p class="ion-text-start"><span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">
+                    Email is required.
+                  </span>
+                  <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+                    Please provide valid email id.
+                  </span></p>
+                  <ion-item>
+                    <ion-label position="floating">Password</ion-label>
+                    <ion-input type="Password" formControlName="password"  placeholder="Enter Password" required></ion-input>
+                  </ion-item>
+                  <p class="ion-text-start"><span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+                    Password is required.
+                  </span></p>
+                  <ion-item>
+                      <ion-label position="floating">Comfirm Password</ion-label>
+                      <ion-input type="Password"  formControlName="password2" placeholder="Enter Comfirm Password" required></ion-input>
+                            </ion-item>
+                  <p class="ion-text-start"><span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">
+                    Confirm Password is required.
+                  </span></p>
+                            <ion-item>
+                              <ion-label position="floating">Mobile Number</ion-label>
+                              <ion-input type="Text" formControlName="mobile" placeholder="Get a call on this number" required></ion-input>
+                            </ion-item>
+                            <p class="ion-text-start"><span class="error ion-padding" *ngIf="isSubmitted && errorControl.mobile.errors?.required">Mobile number is required.</span></p>
+                            <p class="ion-margin-vertical" style="margin-top:1rem; margin-bottom: 1rem;">
+                             <input type="checkbox" required> I agree to <a href="">Terms & Conditions</a> and <a href="">Privacy Policy </a>
+                            </p>
+                  <ion-button type="submit" class="ion-text-capitalize" expand="" id="default-btn" >Create Account</ion-button>
+            </form>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

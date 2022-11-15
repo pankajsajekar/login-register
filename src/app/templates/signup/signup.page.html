@@ -29,14 +29,14 @@
             <ion-col size="7" class="card-border">
               <h3 style="margin: 1rem 2rem 1.4rem 1rem;">Let's Now Take Off!</h3>
               <form [formGroup]="signupForm" (ngSubmit)="submitForm()" novalidate class="m-2rem">
-                <ion-item class="ion-margin-top">
+                <ion-item>
                   <ion-label position="floating">Name</ion-label>
                   <ion-input type="Text" formControlName="name" placeholder="Enter Name"  required></ion-input>
                 </ion-item>
                 <span class="error ion-padding" *ngIf="isSubmitted && errorControl.name.errors?.required">
                   Name is required.
                 </span>
-                <ion-item class="ion-margin-top">
+                <ion-item class="m-top-2rem">
                   <ion-label position="floating">Email Id</ion-label>
                   <ion-input type="Email" formControlName="email" placeholder="Enter Email" required></ion-input>
                 </ion-item>
@@ -47,7 +47,7 @@
                   Please provide valid email id.
                 </span>
                   <p class="hint">You will get relevant job in your email</p>
-                <ion-item class="ion-margin-top">
+                <ion-item>
                   <ion-label position="floating">Password</ion-label>
                   <ion-input type="Password" formControlName="password"  placeholder="Enter Password" required></ion-input>
                 </ion-item>
@@ -55,8 +55,7 @@
                   Password is required.
                 </span>
                   <p class="hint">Minimum 6 character required</p>
-
-                <ion-item class="ion-margin-top">
+                <ion-item>
                   <ion-label position="floating">Confirm Password</ion-label>
                   <ion-input type="Password" formControlName="password2"  placeholder="Enter Confirm Password" required></ion-input>
                 </ion-item>
@@ -64,8 +63,7 @@
                   Password is required.
                 </span>
                   <p class="hint">Comfirm Password should match with Password</p>
-                  
-                <ion-item class="ion-margin-top">
+                <ion-item>
                   <ion-label position="floating">Mobile Number</ion-label>
                   <ion-input type="Text" formControlName="mobile" placeholder="Enter Mobile Number" required></ion-input>
                 </ion-item>

@@ -54,8 +54,9 @@ export class SignupPage implements OnInit {
       password2:['',[Validators.required,
         Validators.minLength(6)]],
       mobile:['',[Validators.required,
-              Validators.minLength(10),
-            Validators.maxLength(11), Validators.pattern('^[0-9]+$')]],
+            Validators.minLength(10),
+            Validators.maxLength(14)]],
+      is_candidate: ['true', Validators.required]
     });
 
   }

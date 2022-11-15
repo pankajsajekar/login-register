@@ -8,13 +8,6 @@ ion-content{
   background-color: $firth-color;
 }
 
-.container{
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 5em;
-}
-
 .hint{
   margin-top: 0.2rem;
   margin-bottom: 1.2rem;
@@ -28,6 +21,19 @@ form ion-item{
 h3{
   font-weight: 600;
 }
+
+ion-item{
+  --min-height: 50px;
+  margin-top: 0.5rem;
+}
+
+
+ion-item ion-label{
+  font-size: 14px;
+  padding-top: 2px;
+  opacity: 0.7;
+}
+
 
 .default-btn{
   color: $sec-color;

@@ -1,0 +1,95 @@
+$first-color: #1da1f2;
+$sec-color: #fff;
+$third-color: #ff8800;
+$firth-color: #50c8ff08;
+
+
+.container {
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.form{
+  max-width: 60%;
+  min-width: 20%;
+}
+
+.login-col{
+  padding: 0px;
+  height: 40em;
+  background-color: $firth-color;
+}
+
+.login-col div{
+  padding: 3rem;
+}
+
+.login-col p{
+  font-size: 13px;
+}
+
+.login-col form p{
+  font-size: 14px;
+  margin: 2px;
+}
+
+.login-col ion-button{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 8rem;
+  --background: $firth-color;
+  background-color: $first-color;
+}
+
+ion-item ion-label{
+  font-size: 14px;
+  padding-top: 2px;
+  opacity: 0.7;
+}
+
+ion-item{
+  --min-height: 50px;
+  margin-top: 0.5rem;
+}
+
+
+h2{
+  font-weight: bold;
+}
+
+.m-top-2rem{
+  margin-top: 2rem;
+}
+
+.m-2rem{
+  margin: 2rem;
+}
+
+.p-r-2rem{
+  padding-right: 2rem;
+}
+
+a{
+  text-decoration: none;
+  color: $third-color;
+}
+
+.forgotpassword{
+  cursor: pointer;
+  opacity: 0.6;
+  font-size: 13px;  
+}
+
+hr{
+ background-color:#ddd; 
+}
+
+.error{
+  font-size: 0.8rem;
+  color: #ff0000;
+}
+

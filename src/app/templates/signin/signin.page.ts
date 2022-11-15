@@ -49,8 +49,8 @@ export class SigninPage implements OnInit {
     this.signinForm = this.formBuilder.group({
 
       email: ['',[Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
-      password: ['',[Validators.required]]
-
+      password: ['',[Validators.required]],
+      user_type: ['true', Validators.required]
     })
   }
 
