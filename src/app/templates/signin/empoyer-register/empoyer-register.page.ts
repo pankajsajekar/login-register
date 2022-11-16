@@ -28,6 +28,7 @@ export class EmpoyerRegisterPage implements OnInit {
       this.ConfigServiceService.EmployerRegisterJsonData(this.JsonData).subscribe(
         (response: any) => {          
         alert(JSON.stringify(response));
+        this.registerForm.reset();
         this.route.navigate(['/signin/elogin/'])
         },
         (error) => {
@@ -44,8 +45,7 @@ export class EmpoyerRegisterPage implements OnInit {
       password:['',[Validators.required,Validators.minLength(6)]],
       password2:['',[Validators.required,Validators.minLength(6)]],
       mobile:['',[Validators.required,Validators.minLength(10),Validators.maxLength(14)]],
-      is_employer: ['true', Validators.required],
-      termcondition: ['', Validators.required]
+      is_employer: ['true', Validators.required]
     })
   }
 

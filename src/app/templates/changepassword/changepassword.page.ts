@@ -26,6 +26,7 @@ export class ChangepasswordPage implements OnInit {
       this.JsonData = this.changepasswordForm.value
       this.ConfigServiceService.ChangePasswordJsonData(this.JsonData).subscribe(
         (response: any) => {
+          this.changepasswordForm.reset();
           this.route.navigate(['home']);
           alert(JSON.stringify(response));
         },

@@ -29,8 +29,9 @@ export class SignupPage implements OnInit {
       this.JsonData = this.signupForm.value
       this.ConfigServiceService.RegisterJsonData(this.JsonData).subscribe(
         (response: any) => {
+          alert(JSON.stringify(response));
+          this.signupForm.reset();
           this.route.navigate(['/signin']);
-          // alert(JSON.stringify(response));
         },
         (error)=>{
           alert(JSON.stringify(error));

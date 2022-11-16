@@ -31,7 +31,19 @@ const routes: Routes = [
   {
     path: 'profile', canActivate:[AuthGuard],
     loadChildren: () => import('./templates/profile/profile.module').then( m => m.ProfilePageModule)
+  },  {
+    path: 'profile',
+    loadChildren: () => import('./dashboard/profile/profile.module').then( m => m.ProfilePageModule)
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./dashboard/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+
 ];
 
 @NgModule({

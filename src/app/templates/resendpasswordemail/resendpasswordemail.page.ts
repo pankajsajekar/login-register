@@ -27,8 +27,9 @@ export class ResendpasswordemailPage implements OnInit {
       this.JsonData = this.resendPasswordFrom.value
       this.ConfigServiceService.ResendPasswordJsonData(this.JsonData).subscribe(
         (response: any) => {
-          this.route.navigate(['signin']);
           alert(JSON.stringify(response));
+          this.route.navigate(['signin']);
+          this.resendPasswordFrom.reset();
         },
         (error)=>{
           alert(JSON.stringify(error));
@@ -44,6 +45,7 @@ export class ResendpasswordemailPage implements OnInit {
       email: ['',[Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
     })
   }
+  
   close(){
     this.route.navigate(['/signin']);
   }

@@ -32,6 +32,7 @@ export class SigninPage implements OnInit {
         // alert(JSON.stringify(response));
         // localStorage.setItem('token', JSON.stringify(response.token.access));
         this.tokenService.saveToken(response.token.access);
+        this.signinForm.reset();
         this.route.navigate(['profile'])
         },
         (error)=>{

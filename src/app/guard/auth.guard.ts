@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
 
     var isAuthenticated = this.ConfigServiceService.getAuthStatus();
 
-    console.log(isAuthenticated, typeof(isAuthenticated))
+    // console.log(isAuthenticated, typeof(isAuthenticated))
 
     if (isAuthenticated == ""){
       this.Router.navigate(['/signin']);

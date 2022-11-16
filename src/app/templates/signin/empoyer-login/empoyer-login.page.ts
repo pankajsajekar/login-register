@@ -10,6 +10,7 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./empoyer-login.page.scss'],
 })
 export class EmpoyerLoginPage implements OnInit {
+
   loginForm: FormGroup;
   isSubmitted = false;
   JsonData: "";
@@ -30,7 +31,8 @@ export class EmpoyerLoginPage implements OnInit {
         // alert(JSON.stringify(response));
         // localStorage.setItem('token', JSON.stringify(response.token.access));
         this.TokenService.saveToken(response.token.access);
-        this.route.navigate(['profile'])
+        this.loginForm.reset();
+        this.route.navigate(['profile']);
         },
         (error)=>{
           alert(JSON.stringify(error));
@@ -53,7 +55,7 @@ export class EmpoyerLoginPage implements OnInit {
 
 
   goforgotpassword(){
-    this.route.navigate(['/resendpasswordemail']);
+    this.route.navigate(['/signin/employer-forgotpassword']);
   }
 
 
